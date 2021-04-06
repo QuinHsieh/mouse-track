@@ -1,0 +1,56 @@
+        :root {
+
+            --mouse-x: 0;
+            --mouse-y: 0;
+            --radius: 40px;
+            --factor: 1;
+            --scale;
+
+        }
+
+        body {
+
+            background-color: gray;
+        }
+
+        #ball {
+
+            width: var(--radius);
+            height: var(--radius);
+            border-radius: 50%;
+            background-color: #FBD771;
+            position: absolute;
+
+            transform: translate(calc(var(--mouse-x) * 1px - var(--radius) / 2), calc(var(--mouse-y) * 1px - var(--radius) / 2));
+            /* 利用 calc 將滑鼠座標 --mouse-x 與 --mouse-y 換算成px 並將球體移至鼠標正中間，改變球體位置 */
+
+        }
+
+        .halo {
+
+            width: var(--radius);
+            height: var(--radius);
+            border-radius: 50%;
+            background-color: #FBD771;
+            opacity: 0.15;
+            position: absolute;
+
+            transform: scale(calc(var(--factor) * var(--scale)));
+            /* 兩個因素進行運算 */
+
+        }
+
+        .halo:nth-of-type(1) {
+
+            --facror: 0.2;
+        }
+
+        .halo:nth-of-type(2) {
+
+            --factor: 0.5;
+        }
+
+        .halo:nth-of-type(3) {
+
+            --factor: 0.9;
+        }
